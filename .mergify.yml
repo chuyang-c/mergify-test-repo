@@ -1,7 +1,8 @@
 pull_request_rules:
-  - name: automatic merge
+  - name: auto-merge-on-label
     conditions:
       - base=main
+      - label=merge
     actions:
-      comment:
-        message: "Merging {{title}} by {{author}}"
+      merge:
+        method: squash
